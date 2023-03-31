@@ -18,7 +18,7 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
-  // '/': { view: 'pages/homepage' },
+  "/": "home/view-home",
   "POST /users": "user/create",
   "GET /signup": "user/view-signup",
 
