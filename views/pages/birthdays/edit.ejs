@@ -1,0 +1,33 @@
+<h1>Update Birthdays</h1>
+<h3>
+  Relief your brain of trying to remember everyone's birthday and let'S do the
+  work for ya!
+</h3>
+
+<form action="/birthdays/<%= birthdayToBeUpdated.id%>/edit" method="POST">
+  <p>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      required
+      placeholder="Name"
+      value="<%= birthdayToBeUpdated.name %>"
+    />
+  </p>
+
+  <p>
+    <input
+      type="date"
+      name="date"
+      id="date"
+      required
+      placeholder="Date"
+      value="<%=birthdayToBeUpdated.date %>"
+    />
+  </p>
+
+  <button type="submit">Update Birthday</button>
+</form>
+
+<a href="/birthdays">See Birthdays</a>

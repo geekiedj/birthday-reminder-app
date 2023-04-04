@@ -1,0 +1,24 @@
+<!-- <p>
+  <a href="/birthdays/new"> New article </a>
+</p>
+
+<p>
+  <a href="/"> Back to home </a>
+</p> -->
+<p>See Birthdays</p>
+
+<ul>
+  <% for (let birthday of birthdays) {%>
+  <li>
+    <a href="/birthdays/<%= birthday.id %>"> <%= birthday.name %> </a>
+  </li>
+
+  <%}%>
+</ul>
+<p>
+  <a href="/birthdays/new">Save new birthdays</a>
+</p>
+
+<p>
+  <a href="/">Back to home</a>
+</p>

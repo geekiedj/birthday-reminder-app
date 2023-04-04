@@ -1,0 +1,13 @@
+<h3><%= birthday.name %></h3>
+
+<p><%= birthday.date %></p>
+
+<!-- <a href="/birthdays">See Birthdays</a> -->
+
+<p>
+  <a href="/birthdays/<%= birthday.id %>/edit">Edit</a>
+</p>
+
+<form action="/birthdays/<%= birthday.id %>/delete" method="POST">
+  <button type="submit">DELETE</button>
+</form>

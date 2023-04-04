@@ -29,16 +29,28 @@ module.exports = {
     notFound: {
       responseType: "notFound",
     },
+    serverError: {
+      responseType: "serverError",
+    },
   },
 
-  fn: async function create(req, res) {
-    try {
-      const { name, email, password } = req.body;
-      const user = await User.create({ name, email, password });
+  fn: async function (inputs, exits) {
+    console.log("create action invoked with inputs:", inputs);
 
-      return res.ok({ message: "User account created successfully!", user });
+    try {
+      // TODO: Validate user input
+
+      // TODO: Add code to create the new user
+      console.log("User account created successfully!");
+
+      return exits.success({
+        message: "User account created successfully!",
+        user: {},
+      });
     } catch (error) {
-      return res.serverError({
+      console.error("An error occurred while creating user account:", error);
+
+      return exits.serverError({
         error: "An error occurred while creating user account",
       });
     }
