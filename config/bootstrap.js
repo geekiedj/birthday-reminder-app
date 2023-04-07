@@ -9,18 +9,18 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-module.exports.bootstrap = async function () {
-  if ((await User.count()) > 0) {
-    return;
-  }
+// module.exports.bootstrap = async function () {
+//   if ((await User.count()) > 0) {
+//     return;
+//   }
 
-  await User.createEach([
-    { email: "ry@example.com", name: "Ryan Dahl", password: "password" },
-    {
-      email: "rachael@example.com",
-      name: "Rachael Shaw",
-      password: "password",
-    },
-    // etc.
-  ]);
-};
+//   await User.createEach([
+//     { email: "ry@example.com", name: "Ryan Dahl", password: "password" },
+//     {
+//       email: "rachael@example.com",
+//       name: "Rachael Shaw",
+//       password: "password",
+//     },
+//     // etc.
+//   ]);
+// };

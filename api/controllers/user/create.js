@@ -25,6 +25,7 @@ module.exports = {
   exits: {
     success: {
       responseType: "redirect",
+      description: "User account created successfully",
     },
     notFound: {
       responseType: "notFound",
@@ -34,25 +35,15 @@ module.exports = {
     },
   },
 
-  fn: async function (inputs, exits) {
-    console.log("create action invoked with inputs:", inputs);
-
+  fn: async function ({ name, email, password }) {
     try {
-      // TODO: Validate user input
-
-      // TODO: Add code to create the new user
-      console.log("User account created successfully!");
-
-      return exits.success({
-        message: "User account created successfully!",
-        user: {},
-      });
+      const newUser = await User.create({ name, email, password }).fetch();
+      sails.log(newUser);
+      this.req.session.userId = newUser.id;
+      return "/";
     } catch (error) {
-      console.error("An error occurred while creating user account:", error);
-
-      return exits.serverError({
-        error: "An error occurred while creating user account",
-      });
+      sails.log(error);
+      throw "serverError";
     }
   },
 };

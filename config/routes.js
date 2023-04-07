@@ -19,8 +19,6 @@ module.exports.routes = {
    ***************************************************************************/
 
   "/": "home/view-home",
-  "POST /users": "user/create",
-  "GET /signup": "user/view-signup",
   "GET /birthdays": "birthdays/view-birthdays",
   "GET /birthdays/:id": "birthdays/view-birthday",
   "GET /birthdays/new": "birthdays/view-new",
@@ -28,6 +26,8 @@ module.exports.routes = {
   "GET /birthdays/:id/edit": "birthdays/view-edit",
   "POST /birthdays/:id/edit": "birthdays/update-birthday",
   "POST /birthdays/:id/delete": "birthdays/delete-birthday",
+  "GET /signup": "user/view-signup",
+  "POST /users": "user/create",
 
   /***************************************************************************
    *                                                                          *
