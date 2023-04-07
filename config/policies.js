@@ -9,14 +9,14 @@
  */
 
 module.exports.policies = {
-
   /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions, unless overridden.       *
-  * (`true` allows public access)                                            *
-  *                                                                          *
-  ***************************************************************************/
+   *                                                                          *
+   * Default policy for all controllers and actions, unless overridden.       *
+   * (`true` allows public access)                                            *
+   *                                                                          *
+   ***************************************************************************/
 
-  // '*': true,
-
+  "birthdays/*": "is-user",
+  "birthdays/view-birthdays": true,
+  "birthdays/view-birthday": true,
 };
