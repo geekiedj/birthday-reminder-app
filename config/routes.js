@@ -28,6 +28,7 @@ module.exports.routes = {
   "POST /birthdays/:id/delete": "birthdays/delete-birthday",
   "GET /signup": "user/view-signup",
   "POST /users": "user/create",
+  "GET /birthdays/reminder": "birthdays/reminder",
 
   /***************************************************************************
    *                                                                          *

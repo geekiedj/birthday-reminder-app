@@ -24,12 +24,8 @@
 //     // etc.
 //   ]);
 // };
-var sails;
-sails = require('sails')
-const cron = require('node-cron')
-const cronConfig = sails.config.cron;
 
 for (const jobName in cronConfig) {
-    const job = cronConfig[jobName].scheduleJob;
-    job.start()
+  const job = cronConfig[jobName].scheduleJob;
+  job.start();
 }
