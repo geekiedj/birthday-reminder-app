@@ -11,7 +11,6 @@
     "grunt": "1.0.4",
     "node-cron": "^3.0.2",
     "sails": "^1.5.4",
-    "sails-hook-cron": "^3.2.0",
     "sails-hook-grunt": "^5.0.0",
     "sails-hook-organics": "^2.2.1",
     "sails-hook-orm": "^4.0.0",

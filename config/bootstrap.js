@@ -24,13 +24,13 @@
 //     // etc.
 //   ]);
 // };
-module.exports.bootstrap = function() {
-  const cron = require('node-cron')
-  const cronConfig = sails.config.cron;
+const job = require('../api/cron/cron-remind')
 
-  for (const jobName in cronConfig) {
-    const job = cronConfig[jobName].scheduleJob;
+module.exports.bootstrap = function() {
+  try {
     job.start();
+  } catch (error) {
+    console.error(`Error starting cron job: ${error}`);
   }
 }
 
