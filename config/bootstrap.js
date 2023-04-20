@@ -24,6 +24,7 @@
 //     // etc.
 //   ]);
 // };
+
 const job = require('../api/cron/cron-remind')
 
 module.exports.bootstrap = function() {
@@ -32,5 +33,4 @@ module.exports.bootstrap = function() {
   } catch (error) {
     console.error(`Error starting cron job: ${error}`);
   }
-}
-
+};
