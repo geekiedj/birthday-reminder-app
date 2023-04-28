@@ -2,6 +2,7 @@ const cron = require("node-cron");
 const nodemailer = require("nodemailer");
 const User = require("../models/User");
 
+//set up nodemailer
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -28,9 +29,11 @@ const job = cron.schedule("*/10 * * * * *", async () => {
   }).catch((error) => {
     console.log(`Error querying users: ${error}`);
   });
+
+  //iterate through each users & birthdays saved
   users.forEach((user) => {
     const mailOptions = {
-      from: "barbarannegarnet@gmail.com",
+      from: "",
       to: user.email,
       subject: "Birthday Reminder",
       text: `Hi ${user.name}, Just a friendly reminder that ${user.name}'s birthday is coming up tomorrow!`,

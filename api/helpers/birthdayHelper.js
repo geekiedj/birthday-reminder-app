@@ -14,7 +14,7 @@ module.exports = {
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
     const users = await User.find({
-      birthdate: {
+      date: {
         ">=": today,
         "<": tomorrow,
       },
